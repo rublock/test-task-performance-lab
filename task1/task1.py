@@ -21,7 +21,8 @@ def iter_arr(arr, step):
     while True:
         if arr[start] != 1:
             result += str(arr[start])
-            arr += arr
+            if len(arr) // start == 1:
+                arr += arr
             start += step - 1
         else:
             return result
