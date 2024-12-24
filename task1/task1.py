@@ -1,6 +1,7 @@
 import sys
 
-n = 5
+n = int(sys.argv[1])
+m = int(sys.argv[2])
 
 
 def make_arr(n):
@@ -13,6 +14,19 @@ def make_arr(n):
     return arr
 
 
-if __name__ == '__main__':
-    my_array = make_arr(int(sys.argv[1]))
-    print(my_array)
+def iter_arr(arr, step):
+    """Перебор массива"""
+    result = "1"
+    start = step - 1
+    while True:
+        if arr[start] != 1:
+            result += str(arr[start])
+            arr += arr
+            start += step - 1
+        else:
+            return result
+
+
+if __name__ == "__main__":
+    arr = make_arr(n)
+    print(iter_arr(arr, m))
