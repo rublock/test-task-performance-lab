@@ -1,9 +1,6 @@
 import json
 import sys
 
-with open(sys.argv[2], "r", encoding="utf-8") as tests:
-    test_data = json.loads(tests.read())
-
 
 def if_values(test_data):
     if test_data.get("values"):
@@ -24,8 +21,12 @@ def set_value(test_data):
             set_value(d["values"])
 
 
-set_value(test_data["tests"])
+if __name__ == "__main__":
+    with open(sys.argv[2], "r", encoding="utf-8") as tests:
+        test_data = json.loads(tests.read())
 
-with open(sys.argv[3], "w", encoding="utf-8") as report:
-    json_str = json.dumps(test_data, indent=2)
-    report.write(json_str)
+    set_value(test_data["tests"])
+
+    with open(sys.argv[3], "w", encoding="utf-8") as report:
+        json_str = json.dumps(test_data, indent=2)
+        report.write(json_str)

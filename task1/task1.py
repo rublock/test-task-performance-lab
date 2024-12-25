@@ -1,16 +1,11 @@
 import sys
 
-n = int(sys.argv[1])
-m = int(sys.argv[2])
-
 
 def make_arr(n):
     """Создание массива"""
     arr = []
-
     for i in range(1, n + 1):
         arr.append(i)
-
     return arr
 
 
@@ -29,5 +24,7 @@ def iter_arr(arr, step):
 
 
 if __name__ == "__main__":
+    n = int(sys.argv[1])
+    m = int(sys.argv[2])
     arr = make_arr(n)
     print(iter_arr(arr, m))
