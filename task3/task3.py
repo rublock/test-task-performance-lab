@@ -20,8 +20,6 @@ def set_value(test_data):
                 for i in values_data["values"]:
                     if i["id"] == d["id"]:
                         d["value"] = i["value"]
-                    else:
-                        continue
         if if_values(d):
             set_value(d["values"])
 
