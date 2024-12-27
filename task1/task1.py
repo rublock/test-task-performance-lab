@@ -2,7 +2,6 @@ import sys
 
 
 def make_arr(n):
-    """Создание массива"""
     arr = []
     for i in range(1, n + 1):
         arr.append(i)
@@ -10,7 +9,6 @@ def make_arr(n):
 
 
 def iter_arr(arr, step):
-    """Перебор массива"""
     result = "1"
     start = step - 1
     while True:
