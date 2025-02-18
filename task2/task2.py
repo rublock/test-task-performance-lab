@@ -14,7 +14,7 @@ def main():
     coordinates_strip = [line.strip() for line in coordinates.readlines()]
 
     for c in coordinates_strip:
-        x0, y0 = map(int, c.split())
+        x0, y0 = map(float, c.split())
         if (x - x0) ** 2 + (y - y0) ** 2 == r ** 2:
             print(0)
         elif (x - x0) ** 2 + (y - y0) ** 2 <= r ** 2:
