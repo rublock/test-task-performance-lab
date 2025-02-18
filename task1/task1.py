@@ -10,6 +10,7 @@ def make_arr(n):
 
 def iter_arr(arr, step):
     result = "1"
+    step %= len(arr)
     start = step - 1
     while True:
         if arr[start] != 1:
